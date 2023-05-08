@@ -1,5 +1,5 @@
 <template>
-  <header id="header_principal">
+  <header id="header_principal" v-if="!this.disableNav">
     <ComponenteNavBarPrincipal></ComponenteNavBarPrincipal>
   </header>
   <main class="view-main" :id="this.id">
@@ -17,15 +17,12 @@ export default {
 
   props: {
     id: String,
+    disableNav: Boolean,
   }
 }
 </script>
 
 <style lang="scss">
-main.view-main {
-  padding: 2rem;
-  flex: 1;
-  background: #F2F2F7;
-}
+@import "../assets/styles/views/ViewMain.scss";
 </style>
 

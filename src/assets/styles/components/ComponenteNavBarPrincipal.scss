@@ -128,13 +128,18 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
         &.ativo {
           .item-nav-bar {
             background-color: var(--cor-tema);
-
+            
             &:hover {
-
               .icone-item-nav-bar,
               .label-item-nav-bar {
                 backdrop-filter: brightness(0.7);
               }
+            }
+          }
+          
+          .item-nav-bar.log-out {
+            &:hover {
+              background-color: var(--red-500);
             }
           }
 
