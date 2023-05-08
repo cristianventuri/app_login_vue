@@ -27,7 +27,7 @@
             <span class="label-item-nav-bar">Configurações</span>
           </RouterLink>
 
-          <RouterLink to="/dashboard" class="item-nav-bar footer-item-nav-bar log-out" title="Sair da Seção">
+          <RouterLink to="/login" class="item-nav-bar footer-item-nav-bar log-out" title="Sair da Seção">
             <span class="icone-item-nav-bar">
               <font-awesome-icon :icon="['fas', 'power-off']" />
             </span>

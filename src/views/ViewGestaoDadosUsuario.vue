@@ -1,9 +1,5 @@
 <template>
-  <header id="header_principal">
-    <ComponenteNavBarPrincipal></ComponenteNavBarPrincipal>
-  </header>
-
-  <main id="view-gestao-dados-usuario" class="view-default">
+  <ViewMain id="view-gestao-dados-usuario">
     <Fieldset legend="Header">
       <template #legend>
         <div class="fieldset-legend-template">
@@ -23,10 +19,11 @@
       </template>
       <ComponenteManutencaoSenha />
     </Fieldset>
-  </main>
+  </ViewMain>
 </template>
 
 <script>
+import ViewMain from './ViewMain.vue';
 import Fieldset from 'primevue/fieldset';
 import ComponenteManutencaoNomeUsuario from '../components/ComponenteManutencaoNomeUsuario.vue';
 import ComponenteManutencaoSenha from '../components/ComponenteManutencaoSenha.vue';
@@ -35,6 +32,7 @@ import ComponenteNavBarPrincipal from '../components/ComponenteNavBarPrincipal.v
 export default {
   name: 'ViewGestaoDadosUsuario',
   components: {
+    ViewMain,
     ComponenteNavBarPrincipal,
     ComponenteManutencaoNomeUsuario,
     ComponenteManutencaoSenha,

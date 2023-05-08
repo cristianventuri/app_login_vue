@@ -1,14 +1,9 @@
 <script setup>
-import ComponenteNavBarPrincipal from '../components/ComponenteNavBarPrincipal.vue';
-
+import ViewMain from './ViewMain.vue';
 </script>
 
 <template>
-  <header id="header_principal">
-    <ComponenteNavBarPrincipal></ComponenteNavBarPrincipal>
-  </header>
-
-  <main class="view-default">
+  <ViewMain>
     ViewGestaoGeral
-  </main>
+  </ViewMain>
 </template>
