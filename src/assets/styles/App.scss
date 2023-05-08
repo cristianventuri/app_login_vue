@@ -1,0 +1,15 @@
+#app {
+  height: 100vh;
+  display: flex;
+
+  main#main_principal {
+    padding: 1rem;
+    flex: 1;
+    background: #F2F2F7;
+
+    .btn-sexo-usuario {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+#view-gestao-dados-usuario {
+  display: grid;
+  gap: 2rem;
+
+  fieldset {
+    max-width: 40rem;
+
+    legend {
+      padding: 5px;
+      background-color: var(--cor-tema);
+      color: var(--white);
+
+      .fieldset-legend-template {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        align-items: center;
+
+        .titulo-legend {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

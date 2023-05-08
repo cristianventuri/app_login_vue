@@ -1,0 +1,23 @@
+.componente-senha-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .campos-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  .acao-formulario {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
