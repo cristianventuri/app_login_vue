@@ -8,6 +8,3 @@ export default {
   name: 'ComponenteMainPrincipal',
 }
 </script>
-
-
-<style lang="scss"></style>

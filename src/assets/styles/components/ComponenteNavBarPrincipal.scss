@@ -15,19 +15,19 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
   gap: 1rem;
   color: var(--white-soft);
 
-  main,
-  footer {
+  .main,
+  .footer {
     display: flex;
     flex-direction: column;
   }
 
-  main {
+  .main {
     flex: 1;
     justify-content: flex-start;
 
   }
 
-  footer {
+  .footer {
     flex: 1;
     justify-content: flex-end;
 
@@ -105,8 +105,8 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
     width: 15rem;
     border-radius: 0 25px 25px 0;
 
-    main,
-    footer {
+    .main,
+    .footer {
       .item-nav-bar {
         .label-item-nav-bar {
           width: 100%;
@@ -114,7 +114,7 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
       }
     }
 
-    footer {
+    .footer {
       .item-nav-gestao-usuario {
         .container-avatar-usuario {
           padding: unset;

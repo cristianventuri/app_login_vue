@@ -1,24 +1,24 @@
 <template>
   <nav id="navbar-principal" @mouseleave="this.mouseLeaveNavBar()" @mouseenter="this.expandirMenuGeral()">
 
-    <main>
-      <RouterLink to="/dashboard" class="item-nav-bar main-item-nav-bar" title="Dashboard">
-        <span class="icone-item-nav-bar">
-          <font-awesome-icon :icon="['fas', 'chart-simple']" />
-        </span>
-        <span class="label-item-nav-bar">Dashboard</span>
-      </RouterLink>
+    <div class="main">
+        <RouterLink to="/dashboard" class="item-nav-bar main-item-nav-bar" title="Dashboard">
+          <span class="icone-item-nav-bar">
+            <font-awesome-icon :icon="['fas', 'chart-simple']" />
+          </span>
+          <span class="label-item-nav-bar">Dashboard</span>
+        </RouterLink>
+  
+        <RouterLink to="/gestao-geral" class="item-nav-bar main-item-nav-bar" title="Gestão de Conteúdo">
+          <span class="icone-item-nav-bar">
+            <font-awesome-icon :icon="['fas', 'gear']" />
+          </span>
+          <span class="label-item-nav-bar">Gestão</span>
+        </RouterLink>
+    </div>
 
-      <RouterLink to="/gestao-geral" class="item-nav-bar main-item-nav-bar" title="Gestão de Conteúdo">
-        <span class="icone-item-nav-bar">
-          <font-awesome-icon :icon="['fas', 'gear']" />
-        </span>
-        <span class="label-item-nav-bar">Gestão</span>
-      </RouterLink>
-    </main>
-
-    <footer>
-      <section class="item-nav-gestao-usuario">
+    <div class="footer">
+      <div class="item-nav-gestao-usuario">
         <div class="conteudo-item-gestao-usuario">
           <RouterLink to="/usuario" class="item-nav-bar footer-item-nav-bar" title="Configurações do Usuário">
             <span class="icone-item-nav-bar">
@@ -40,8 +40,8 @@
             <font-awesome-icon :icon="['fas', 'user']" />
           </span>
         </div>
-      </section>
-    </footer>
+      </div>
+    </div>
 
   </nav>
 </template>

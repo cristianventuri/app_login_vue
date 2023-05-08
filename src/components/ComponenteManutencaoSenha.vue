@@ -1,6 +1,5 @@
 <template>
-  <form class="componente-senha-usuario">
-    
+  <form class="componente-senha-usuario" @submit.prevent="this.submit()">
     <div class="campos-formulario">
       <FieldSenha label="Senha atual" class="campo-senha-atual" name="senha_atual" />
       <FieldSenha label="Nova senha" tituloFeedback="Nova senha" class="campo-nova-senha" feedback name="nova_senha" />
@@ -8,7 +7,7 @@
     </div>
 
     <div class="acao-formulario">
-      <Button severity="success" title="Confirmar" size="small" @click="this.clickSalvaSenha">
+      <Button severity="success" title="Confirmar" size="small" type="submit" >
         <span class="icone pi pi-sync"></span>
         <span class="icone-detail">Alterar</span>
       </Button>
@@ -32,15 +31,13 @@ export default {
   },
 
   data(){
-    return{
-      
+    return {
+
     }
   },
 
   methods: {
-    clickSalvaSenha(){
-      debugger;
-
+    submit(){
       success('Sucesso!', "Sua senha foi alterada com sucesso.")
     },
   }

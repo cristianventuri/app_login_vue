@@ -1,8 +1,15 @@
 <script setup>
+import ComponenteNavBarPrincipal from '../components/ComponenteNavBarPrincipal.vue';
+
+
 </script>
 
 <template>
-  <main>
+  <header id="header_principal">
+    <ComponenteNavBarPrincipal></ComponenteNavBarPrincipal>
+  </header>
+
+  <main class="view-default">
     ViewDashboardGeral
   </main>
 </template>
