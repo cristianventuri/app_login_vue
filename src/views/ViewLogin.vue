@@ -1,15 +1,25 @@
 <template>
   <ViewMain disableNav>
+
     <section class="autenticacao">
       <div class="conteudo-autenticacao">
 
-        <div class="container-mensagem">
-          teste
+        <div class="container-inicial">
+          <span class="icone pi pi-users"></span>
         </div>
 
-        <div class="container-formulario-login">
-          <FieldSenha label="Senha atual" class="campo-senha-atual" name="senha_atual" />
-        </div>
+        <form class="container-formulario-login" @submit.prevent="this.submit()">
+          <div class="campos-formulario">
+            <InputText class="p-inputtext-sm" v-model="this.form.usuario" type="text" placeholder="Usuário ou E-mail" required/>
+            <Password class="p-inputtext-sm" v-model="this.form.senha" :feedback="false" toggleMask placeholder="Senha" required/>
+          </div>
+
+          <div class="acao-formulario">
+            <Button severity="primary" title="Confirmar" size="small" type="submit">
+              <span class="icone-detail">Acessar</span>
+            </Button>
+          </div>
+        </form>
 
       </div>
     </section>
@@ -17,15 +27,35 @@
 </template>
 
 <script>
-import FieldSenha from '../fields/FieldSenha.vue';
 import ViewMain from './ViewMain.vue';
+import Password from 'primevue/password';
+import InputText from 'primevue/inputtext';
+import Button from 'primevue/button';
 
 export default {
   name: "ViewLogin",
   components: {
     ViewMain,
-    FieldSenha
-},
+    InputText,
+    Password,
+    Button,
+  },
+
+  data() {
+    return {
+      form: {
+        usuario: null,
+        senha: null
+      }
+    }
+  },
+
+  methods: {
+    submit() {
+      console.log(this.form);
+      window.location.pathname = '/';
+    },
+  }
 
 }
 </script>
