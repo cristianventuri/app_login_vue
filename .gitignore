@@ -1,4 +1,7 @@
 # Logs
+package-lock.json
+*.vscode
+
 logs
 *.log
 npm-debug.log*
