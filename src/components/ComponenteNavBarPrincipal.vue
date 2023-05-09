@@ -8,7 +8,6 @@
           </span>
           <span class="label-item-nav-bar">Dashboard</span>
         </RouterLink>
-  
         <RouterLink to="/gestao-geral" class="item-nav-bar main-item-nav-bar" title="Gestão de Conteúdo">
           <span class="icone-item-nav-bar">
             <font-awesome-icon :icon="['fas', 'gear']" />
@@ -26,7 +25,6 @@
             </span>
             <span class="label-item-nav-bar">Configurações</span>
           </RouterLink>
-
           <RouterLink to="/login" class="item-nav-bar footer-item-nav-bar log-out" title="Sair da Seção">
             <span class="icone-item-nav-bar">
               <font-awesome-icon :icon="['fas', 'power-off']" />

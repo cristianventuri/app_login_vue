@@ -53,7 +53,7 @@ export default {
     submit() {
       const userAuthentication = useUserAuthentication();
       userAuthentication.logIn(1, 'cristian.venturi', 'Cristian', 'ABCDE');
-      this.$router.replace('dashboard');
+      this.$router.replace('/');
     },
   },
 
