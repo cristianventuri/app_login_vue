@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { useUserAuthentication } from '../stores/userAuthentication';
 import ComponenteNavBarPrincipal from '../components/ComponenteNavBarPrincipal.vue';
 export default {
   name: "ViewMain",
@@ -18,7 +19,16 @@ export default {
   props: {
     id: String,
     disableNav: Boolean,
+  },
+
+  created() {
+    const userAuthentication = useUserAuthentication();
+    var isAuth = userAuthentication.validateAuthentication();
+    if (!isAuth) {
+      this.$router.replace('login');
+    }
   }
+
 }
 </script>
 

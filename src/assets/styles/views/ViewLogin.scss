@@ -1,76 +1,70 @@
 $font-color-placeholder: rgba($color: #fff, $alpha: .6);
 
-.view-main {
-  background-image: url('/src/assets/images/bg/bg-image-1.svg') !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+.autenticacao {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .autenticacao {
-    height: 100%;
-    width: 100%;
+  .conteudo-autenticacao {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 20rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px -5px var(--black-mute);
+    background-color: rgba($color: #000000, $alpha: .15);
 
-    .conteudo-autenticacao {
+    .container-inicial {
+      color: var(--white);
+
+      .icone {
+        font-size: 6rem;
+        padding: 2rem;
+      }
+    }
+
+    .container-formulario-login,
+    .campos-formulario {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
       width: 100%;
-      max-width: 20rem;
-      padding: 2rem;
-      border-radius: 2rem;
-      box-shadow: 0 0 20px -5px var(--black-mute);
-      background-color: rgba($color: #000000, $alpha: .15);
+      gap: 1rem;
+    }
 
-      .container-inicial {
-        color: var(--white);
-
-        .icone {
-          font-size: 6rem;
-          padding: 2rem;
-        }
-      }
-
-      .container-formulario-login,
+    .container-formulario-login {
       .campos-formulario {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 1rem;
-      }
+        gap: .5rem;
 
-      .container-formulario-login {
-        .campos-formulario {
-          gap: .5rem;
+        input {
+          width: 100%;
+          border: unset;
+          text-align: center;
+          color: var(--white);
+          background-color: rgba($color: #fff, $alpha: .15);
 
-          input {
-            width: 100%;
-            border: unset;
-            text-align: center;
-            color: var(--white);
-            background-color: rgba($color: #fff, $alpha: .15);
-
-            &::placeholder {
-              color: $font-color-placeholder;
-            }
-          }
-
-          svg {
+          &::placeholder {
             color: $font-color-placeholder;
-            cursor: pointer;
           }
         }
 
-        .acao-formulario {
-          display: flex;
-          justify-content: flex-end;
+        svg {
+          color: $font-color-placeholder;
+          cursor: pointer;
+        }
+      }
 
-          button{
-            display: flex;
-            gap: .5rem
-          }
+      .acao-formulario {
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          display: flex;
+          gap: .5rem
         }
       }
     }

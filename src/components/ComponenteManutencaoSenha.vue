@@ -17,16 +17,14 @@
 </template>
 
 <script>
-import Password from 'primevue/password';
+import FieldSenha from '../fields/FieldSenha.vue';
 import Button from 'primevue/button';
 import { info, success, warn, error } from '@/services/ServiceToast';
-import FieldSenha from '../fields/FieldSenha.vue';
 
 export default {
   name: 'ComponenteManutencaoSenha',
   components: {
     FieldSenha,
-    Password,
     Button,
   },
 
