@@ -58,19 +58,19 @@ export const useUserAuthentication = defineStore('userAuthentication', {
 
   getters: {
     getID: (state) => {
-      this.validateAuthentication();
+      state.validateAuthentication();
       return state.id;
     },
     getName: (state) => {
-      this.validateAuthentication();
+      state.validateAuthentication();
       return state.name;
     },
     getUser: (state) => {
-      this.validateAuthentication();
+      state.validateAuthentication();
       return state.user;
     },
     getToken: (state) => {
-      this.validateAuthentication();
+      state.validateAuthentication();
       return state.token;
     },
   },

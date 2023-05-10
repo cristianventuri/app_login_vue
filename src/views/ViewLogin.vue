@@ -112,7 +112,7 @@ export default {
 
     autenticaUsuario() {
       const userAuthentication = useUserAuthentication();
-      userAuthentication.logIn(1, 'cristian.venturi', 'Cristian', 'ABCDE');
+      userAuthentication.logIn(1, 'cristian.venturi', this.form.usuario, 'ABCDE');
       setTimeout(() => { this.$router.replace('/'); }, 1200);
     },
 
