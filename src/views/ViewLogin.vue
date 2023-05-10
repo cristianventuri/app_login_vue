@@ -8,10 +8,8 @@
         </div>
         <form class="container-formulario-login" @submit.prevent="this.submit()">
           <div class="campos-formulario">
-            <InputText class="p-inputtext-sm" v-model="this.form.usuario" type="text" placeholder="Usuário ou E-mail"
-              required />
-            <Password class="p-inputtext-sm" v-model="this.form.senha" :feedback="false" toggleMask placeholder="Senha"
-              required />
+            <InputText class="p-inputtext-sm" v-model="this.form.usuario" type="text" placeholder="Usuário ou E-mail" />
+            <Password class="p-inputtext-sm" v-model="this.form.senha" :feedback="false" toggleMask placeholder="Senha" />
           </div>
           <div class="acao-formulario">
             <Button severity="primary" title="Confirmar" size="small" type="submit">
