@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ViewDashboardGeral from '../views/ViewDashboardGeral.vue'
+import ViewGestaoGeral from '../views/ViewGestaoGeral.vue'
+import ViewGestaoDadosUsuario from '../views/ViewGestaoDadosUsuario.vue'
 
 const routes = [
   {
@@ -8,27 +10,27 @@ const routes = [
     component: ViewDashboardGeral
   },
   {
-    path: '/dashboard',
-    name: 'dashboard',
+    path: '/login',
+    name: 'login',
     // route level code-splitting
     // this generates a separate chunk (About.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import('../views/ViewDashboardGeral.vue')
+    component: () => import('../views/ViewLogin.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/ViewLogin.vue')
+    path: '/dashboard',
+    name: 'dashboard',
+    component: ViewDashboardGeral
   },
   {
     path: '/gestao-geral',
     name: 'gestao-geral',
-    component: () => import('../views/ViewGestaoGeral.vue')
+    component: ViewGestaoGeral
   },
   {
     path: '/usuario',
     name: 'usuario',
-    component: () => import('../views/ViewGestaoDadosUsuario.vue')
+    component: ViewGestaoDadosUsuario
   }
 ];
 

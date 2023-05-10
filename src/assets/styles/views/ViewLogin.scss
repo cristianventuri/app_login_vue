@@ -8,13 +8,14 @@ $font-color-placeholder: rgba($color: #fff, $alpha: .6);
   justify-content: center;
 
   .conteudo-autenticacao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     width: 100%;
     max-width: 20rem;
     padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     border-radius: 2rem;
     box-shadow: 0 0 20px -5px var(--black-mute);
     background-color: rgba($color: #000000, $alpha: .40);
@@ -24,7 +25,42 @@ $font-color-placeholder: rgba($color: #fff, $alpha: .6);
 
       .icone {
         font-size: 6rem;
-        padding: 2rem;
+      }
+    }
+
+    .container-mensagem {
+      width: 100%;
+
+      .mensagem {
+        display: grid;
+        grid-template-columns: 1rem auto;
+        align-items: center;
+        gap: 0.5rem;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+
+        &.load {
+          background-color: var(--blue-600);
+        }
+
+        &.success {
+          background-color: var(--green-500);
+        }
+
+        &.error {
+          background-color: var(--red-600);
+        }
+
+        &.warn {
+          background-color: var(--orange-600);
+        }
+
+        .icone {
+          font-size: 1rem;
+          width: 1rem;
+          height: 1rem;
+        }
       }
     }
 
@@ -42,7 +78,6 @@ $font-color-placeholder: rgba($color: #fff, $alpha: .6);
 
         input {
           width: 100%;
-          border: unset;
           text-align: center;
           color: var(--white);
           background-color: rgba($color: #fff, $alpha: .05);
