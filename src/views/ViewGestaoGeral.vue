@@ -7,12 +7,10 @@
 </template>
 
 <script>
-import ComponenteNavBarGestaoGeral from '../components/ComponenteNavBarGestaoGeral.vue';
 
 export default {
   name: "ViewGestaoGeral",
   components: {
-    ComponenteNavBarGestaoGeral,
   }
 }
 

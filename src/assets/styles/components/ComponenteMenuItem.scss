@@ -1,0 +1,56 @@
+$transition: ease-in-out .2s;
+$widthicon: 3.6rem;
+
+.item-menu {
+  display: flex;
+  flex-direction: var(--nav-direction);
+  color: var(--white);
+
+  .conteudo-item-menu {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: $widthicon auto;
+
+    &:hover {
+      transition: $transition;
+      background-color: var(--cor-tema);
+    }
+
+    .icone-item-menu {
+      height: 3.4rem;
+      width: $widthicon;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+
+      i, svg {
+        font-size: 1rem;
+      }
+    }
+
+    .texto-item-menu {
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      justify-content: flex-start;
+
+      p {
+        font-size: .85rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  .conteudo-item-submenu {
+    backdrop-filter: brightness(0.8);
+    overflow: hidden;
+    height: 0;
+  }
+
+  &.ativo {
+    >.conteudo-item-submenu {
+      height: max-content;
+    }
+  }
+}
