@@ -24,7 +24,8 @@ $widthicon: 3.6rem;
       justify-content: center;
       color: var(--white);
 
-      i, svg {
+      i,
+      svg {
         font-size: 1rem;
       }
     }
@@ -36,6 +37,9 @@ $widthicon: 3.6rem;
       justify-content: flex-start;
 
       p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
         font-size: .85rem;
         padding-right: 1rem;
       }

@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ViewDashboardGeral from '../views/ViewDashboardGeral.vue'
 import ViewGestaoGeral from '../views/ViewGestaoGeral.vue'
+import ViewGestaoProduto from '../views/ViewGestaoProduto.vue'
 import ViewGestaoDadosUsuario from '../views/ViewGestaoDadosUsuario.vue'
+import ViewGestaoLinhaProduto from '../views/ViewGestaoLinhaProduto.vue'
+import ViewLogManutencao from '../views/ViewLogManutencao.vue'
 
 const routes = [
   {
@@ -28,8 +31,23 @@ const routes = [
     component: ViewGestaoGeral
   },
   {
-    path: '/usuario',
-    name: 'usuario',
+    path: '/gestao-linha-produto',
+    name: 'gestao-linha-produto',
+    component: ViewGestaoLinhaProduto
+  },
+  {
+    path: '/gestao-produto',
+    name: 'gestao-produto',
+    component: ViewGestaoProduto
+  },
+  {
+    path: '/log-manutencao',
+    name: 'log-manutencao',
+    component: ViewLogManutencao
+  },
+  {
+    path: '/preferencia-usuario',
+    name: 'preferencia-usuario',
     component: ViewGestaoDadosUsuario
   }
 ];

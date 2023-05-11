@@ -7,7 +7,7 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
 #navbar-principal {
   height: 100%;
   display: grid;
-  background: linear-gradient(45deg, rgba(40, 40, 40, 0.5), rgba(24, 24, 24, 0.85));
+  background: linear-gradient(45deg, rgba(40, 40, 40, 0.65), rgba(24, 24, 24, 0.85));
 
   .menu {
     .item-menu {
@@ -22,8 +22,35 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
       }
     }
 
-    .item-menu.item-menu-logoff{
-      border-top: 1px solid white;
+    .item-menu.item-menu-usuario {
+      >.conteudo-item-menu {
+        .icone-item-menu {
+          svg {
+            width: 3rem;
+            height: 3rem;
+            padding: .8rem;
+            box-sizing: border-box;
+            border: 2px solid var(--cor-tema);
+            border-radius: 3rem;
+          }
+        }
+
+        .texto-item-menu {
+          p {
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+
+    .item-menu.item-menu-logoff {
+      border-top: 1px solid rgb(255 255 255 / 35%);
+
+      .conteudo-item-menu {
+        &:hover {
+          background-color: rgb(245, 85, 60);
+        }
+      }
     }
   }
 

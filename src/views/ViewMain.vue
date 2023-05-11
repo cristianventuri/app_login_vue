@@ -1,6 +1,6 @@
 <template>
   <header id="header_principal" v-if="!this.disableNav">
-    <ComponenteNavBarPrincipal></ComponenteNavBarPrincipal>
+    <ComponenteNavbarPrincipal></ComponenteNavbarPrincipal>
   </header>
   <main class="view-main" :id="this.id">
       <RouterView/>
@@ -9,11 +9,11 @@
 
 <script>
 import { RouterView } from 'vue-router'
-import ComponenteNavBarPrincipal from '../components/ComponenteNavBarPrincipal.vue';
+import ComponenteNavbarPrincipal from '../components/ComponenteNavbarPrincipal.vue';
 export default {
   name: "ViewMain",
   components: {
-    ComponenteNavBarPrincipal,
+    ComponenteNavbarPrincipal,
   },
 
   props: {
