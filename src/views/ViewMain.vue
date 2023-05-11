@@ -3,11 +3,12 @@
     <ComponenteNavBarPrincipal></ComponenteNavBarPrincipal>
   </header>
   <main class="view-main" :id="this.id">
-    <slot></slot>
+      <RouterView/>
   </main>
 </template>
 
 <script>
+import { RouterView } from 'vue-router'
 import ComponenteNavBarPrincipal from '../components/ComponenteNavBarPrincipal.vue';
 export default {
   name: "ViewMain",

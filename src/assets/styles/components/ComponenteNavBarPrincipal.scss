@@ -1,6 +1,6 @@
 $fontSizeIcon: 1.3rem;
 $fontSizeItem: .8rem;
-$transitionTimeDefault: .2s;
+$transitionTimeDefault: .3s;
 $transitionEffectDefault: ease-in-out;
 $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
 
@@ -10,10 +10,11 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--black-mute);
-  transition: $transitionEffectDefault .4s;
+  overflow: hidden;
   gap: 1rem;
   color: var(--white-soft);
+  background: linear-gradient(45deg, rgb(40 40 40 / 50%), rgb(24 24 24 / 85%));
+  transition: $transitionDefault;
 
   .main,
   .footer {
@@ -29,7 +30,6 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
 
   .footer {
     flex: 1;
-    padding-bottom: 0.5rem;
     justify-content: flex-end;
 
     .item-nav-gestao-usuario {
@@ -44,20 +44,23 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
       .container-avatar-usuario {
         .icone-item-nav-bar {
           .avatar-usuario {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5rem;
-            background-color: var(--cor-tema);
             width: 2.8rem;
             height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cor-tema);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--cor-tema);
+            box-sizing: border-box;
+            border-radius: 5rem;
           }
         }
       }
 
       &.ativo {
         .conteudo-item-gestao-usuario {
-          height: 6.2rem;
+          height: 6rem;
         }
       }
     }
@@ -94,10 +97,15 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
     &:hover {
       background-color: var(--cor-tema);
     }
+
+    &.container-avatar-usuario {
+      height: 3.5rem;
+    }
   }
 
   &.ativo {
     width: 15rem;
+    border-radius: 0 2rem 2rem 0;
 
     .label-item-nav-bar {
       width: 100%;

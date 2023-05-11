@@ -1,47 +1,45 @@
 <template>
-  <ViewMain disableNav>
-
-    <section class="autenticacao">
-      <div class="conteudo-autenticacao">
-        <div class="container-inicial">
-          <span class="icone pi pi-users"></span>
-        </div>
-        <div class="container-mensagem">
-          <div class="mensagem success" v-if="this.mensagem.success">
-            <span class="icone pi pi-check-circle"></span>
-            <span class="texto-mensagem">{{ this.mensagem.success }}</span>
-          </div>
-          <div class="mensagem load" v-if="this.mensagem.load">
-            <span class="icone pi pi-spin pi-spinner"></span>
-            <span class="texto-mensagem">{{ this.mensagem.load }}</span>
-          </div>
-          <div class="mensagem error" v-if="this.mensagem.error">
-            <span class="icone pi pi-times-circle"></span>
-            <span class="texto-mensagem">{{ this.mensagem.error }}</span>
-          </div>
-          <div class="mensagem warn" v-if="this.mensagem.warn">
-            <span class="icone pi pi-exclamation-circle"></span>
-            <span class="texto-mensagem">{{ this.mensagem.warn }}</span>
-          </div>
-        </div>
-        <form class="container-formulario-login" @submit.prevent="this.submit()">
-          <div class="campos-formulario">
-            <InputText id="username" class="p-inputtext-sm" v-model="this.form.usuario" type="text" placeholder="Usuário ou E-mail" @focus="this.onFocusInput($event)"/>
-            <Password id="password" class="p-inputtext-sm" v-model="this.form.senha" :feedback="false" toggleMask placeholder="Senha" @focus="this.onFocusInput($event)"/>
-          </div>
-          <div class="acao-formulario">
-            <Button severity="primary" title="Confirmar" size="small" type="submit">
-              <span class="icone-detail">Acessar</span>
-            </Button>
-          </div>
-        </form>
+  <section id="section-autenticacao">
+    <div class="conteudo-autenticacao">
+      <div class="container-inicial">
+        <span class="icone pi pi-users"></span>
       </div>
-    </section>
-  </ViewMain>
+
+      <div class="mensagem success" v-if="this.mensagem.success">
+        <span class="icone pi pi-check-circle"></span>
+        <span class="texto-mensagem">{{ this.mensagem.success }}</span>
+      </div>
+      <div class="mensagem load" v-if="this.mensagem.load">
+        <span class="icone pi pi-spin pi-spinner"></span>
+        <span class="texto-mensagem">{{ this.mensagem.load }}</span>
+      </div>
+      <div class="mensagem error" v-if="this.mensagem.error">
+        <span class="icone pi pi-times-circle"></span>
+        <span class="texto-mensagem">{{ this.mensagem.error }}</span>
+      </div>
+      <div class="mensagem warn" v-if="this.mensagem.warn">
+        <span class="icone pi pi-exclamation-circle"></span>
+        <span class="texto-mensagem">{{ this.mensagem.warn }}</span>
+      </div>
+      
+      <form class="container-formulario-login" @submit.prevent="this.submit()">
+        <div class="campos-formulario">
+          <InputText id="username" class="p-inputtext-sm" v-model="this.form.usuario" type="text"
+            placeholder="Usuário ou E-mail" @focus="this.onFocusInput($event)" />
+          <Password id="password" class="p-inputtext-sm" v-model="this.form.senha" :feedback="false" toggleMask
+            placeholder="Senha" @focus="this.onFocusInput($event)" />
+        </div>
+        <div class="acao-formulario">
+          <Button severity="primary" title="Confirmar" size="small" type="submit">
+            <span class="icone-detail">Acessar</span>
+          </Button>
+        </div>
+      </form>
+    </div>
+  </section>
 </template>
 
 <script>
-import ViewMain from './ViewMain.vue';
 import Password from 'primevue/password';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
@@ -50,7 +48,6 @@ import { useUserAuthentication } from '../stores/userAuthentication';
 export default {
   name: "ViewLogin",
   components: {
-    ViewMain,
     InputText,
     Password,
     Button,
@@ -98,15 +95,15 @@ export default {
       }
     },
 
-    onFocusInput(event){
+    onFocusInput(event) {
       this.removeClassInvalid(event.currentTarget);
     },
 
-    addClassInvalid(element){
+    addClassInvalid(element) {
       $(element).addClass("p-invalid");
     },
-    
-    removeClassInvalid(element){
+
+    removeClassInvalid(element) {
       $(element).removeClass("p-invalid");
     },
 
@@ -127,6 +124,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "../assets/styles/views/ViewLogin.scss";
-</style>
+<style lang="scss">@import "../assets/styles/views/ViewLogin.scss";</style>

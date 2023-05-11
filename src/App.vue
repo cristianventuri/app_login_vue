@@ -1,21 +1,23 @@
 <template>
-  <RouterView v-if="(this.isAuth) || (this.isLogin)"/>
+  <ViewMain :disableNav="(!this.isAuth) || (this.isLogin)" />
   <section id="toasts-position">
     <ComponenteToast />
   </section>
 </template>
 
 <script>
-import { RouterView } from 'vue-router'
+
 import ComponenteToast from './components/ComponenteToast.vue';
 import Toast from 'primevue/toast';
 import { useUserAuthentication } from './stores/userAuthentication';
+import ViewMain from './views/ViewMain.vue';
 
 export default {
   name: "App",
   components: {
     ComponenteToast,
     Toast,
+    ViewMain
   },
 
   data() {
