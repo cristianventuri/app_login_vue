@@ -52,6 +52,10 @@ $widthicon: 3.6rem;
     height: 0;
   }
 
+  &.item-menu-usuario.ativo{
+    backdrop-filter: brightness(0.8);
+  }
+
   &.ativo {
     >.conteudo-item-submenu {
       height: max-content;

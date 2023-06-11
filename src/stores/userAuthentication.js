@@ -28,6 +28,10 @@ export const useUserAuthentication = defineStore('userAuthentication', {
         this.logOut();
       }
     },
+    updateName(name){
+      this.name = name;
+      sessionStorage.setItem('userData', JSON.stringify(this.$state));
+    },
     validateAuthentication() {
       if (this.id && this.user && this.name && this.token) {
         return true;

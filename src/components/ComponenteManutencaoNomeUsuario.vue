@@ -1,22 +1,28 @@
 <template>
-  <div class="input-nome-usuario">
-    <label for="nome_usuario" class="ml-2">Nome de Usuário:</label>
-    <div class="p-inputgroup flex-1">
-      <InputText v-model="nomeUsuario" type="text" class="p-inputtext-sm" placeholder="Nome" inputId="nome_usuario" :disabled="this.isDisabled" />
-      <Button v-if="!this.isVisualizacao" severity="danger" title="Cancelar" @click="this.clickCancelarAlteracao()">
-        <font-awesome-icon :icon="['fas', 'xmark']" />
-      </Button>
-      <Button v-if="!this.somenteVisualizacao" :severity="this.btnSeverity" :title="this.btnTitle" @click="this.clickAlterarNome()">
-        <font-awesome-icon :icon="this.btnIcon" />
-      </Button>
+  <form class="componente-senha-usuario" @submit.prevent="this.submit()">
+    <div class="input-nome-usuario">
+      <label for="nome_usuario" class="ml-2">Nome de Usuário:</label>
+      <div class="p-inputgroup flex-1">
+        <InputText v-model="nomeUsuario" type="text" class="p-inputtext-sm" placeholder="Nome" inputId="nome_usuario" :disabled="this.isDisabled" />
+        <Button v-if="this.isVisualizacao" severity="warning" title="Alterar" @click="this.clickAlterar()">
+          <font-awesome-icon :icon="['fas', 'pencil']" />
+        </Button>
+        <Button v-if="!this.isVisualizacao" severity="danger" title="Cancelar" @click="this.clickCancelar()">
+          <font-awesome-icon :icon="['fas', 'xmark']" />
+        </Button>
+        <Button v-if="!this.isVisualizacao" severity="success" title="Salvar" type="submit">
+          <font-awesome-icon :icon="['fas', 'check']" />
+        </Button>
+      </div>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import { info, success, warn, error } from '@/services/ServiceToast';
+import { useUserAuthentication } from '../stores/userAuthentication';
 
 export default {
   name: 'ComponenteManutencaoNomeUsuario',
@@ -33,7 +39,7 @@ export default {
 
   data() {
     return {
-      nomeUsuario: 'Cristian Venturi',
+      nomeUsuario: this.getUsername(),
       nomeUsuarioInicial: null,
       isVisualizacao: true,
     }
@@ -56,35 +62,32 @@ export default {
       this.isVisualizacao = isVisualizacao;
       return this.isVisualizacao;
     },
-
-    btnSeverity() {
-      return this.isVisualizacao ? 'warning' : 'success';
-    },
-
-    btnIcon() {
-      return this.isVisualizacao ? ['fas', 'pencil'] : ['fas', 'check'];
-    },
-
-    btnTitle() {
-      return this.isVisualizacao ? 'Alterar' : 'Salvar';
-    }
   },
 
   methods: {
-    clickAlterarNome() {
+    getUsername() {
+      const userAuthentication = useUserAuthentication();
+      return userAuthentication.getName;
+    },
+
+    submit(oFormulario) {
       this.isVisualizacao = !this.isVisualizacao;
-      if (!this.isVisualizacao) {
-        this.nomeUsuarioInicial = this.nomeUsuario;
-        warn('Atenção:', 'O campo "Nome de Usuário" está um modo de alteração.');
-      } else if (this.nomeUsuarioInicial !== this.nomeUsuario) {
-        // Salvar;
+      if (this.nomeUsuarioInicial !== this.nomeUsuario) {
+        const userAuthentication = useUserAuthentication();
+        userAuthentication.updateName(this.nomeUsuario);
         success('Sucesso!', 'Seu novo "Nome de Usuário" foi salvo.');
       } else {
         warn('Atenção:', 'O campo "Nome de Usuário" não possui alterações, por isso não será salvo!');
       }
     },
 
-    clickCancelarAlteracao() {
+    clickAlterar() {
+      this.isVisualizacao = !this.isVisualizacao;
+      this.nomeUsuarioInicial = this.nomeUsuario;
+      warn('Atenção:', 'O campo "Nome de Usuário" está um modo de alteração.')
+    },
+
+    clickCancelar() {
       this.isVisualizacao = !this.isVisualizacao;
       this.nomeUsuario = this.nomeUsuarioInicial;
       error('Importante:', 'A alteração do campo "Nome de Usuário" foi desfeita.')

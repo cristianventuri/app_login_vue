@@ -43,13 +43,15 @@ export default {
       return userAuthentication.getName;
     },
     leaveNav() {
-      if (!$(this.$el).is(":hover")) {
-        $(this.$el).removeClass("ativo");
-        $(".ativo", this.$el).removeClass("ativo");
-      }
+      // if (!$(this.$el).is(":hover")) {
+      //   $(this.$el).removeClass("ativo");
+      //   $(".ativo", this.$el).removeClass("ativo");
+      // }
     }
   },
 }
 </script>
 
-<style lang="scss">@import "../assets/styles/components/ComponenteNavbarPrincipal.scss";</style>
+<style lang="scss">
+@import "../assets/styles/components/ComponenteNavbarPrincipal.scss";
+</style>

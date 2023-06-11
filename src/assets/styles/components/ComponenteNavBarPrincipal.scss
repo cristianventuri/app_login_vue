@@ -1,8 +1,8 @@
 $fontSizeIcon: 1.3rem;
 $fontSizeItem: .8rem;
-$transitionTimeDefault: .1s;
+$transitionTimeDefault: .2s;
 $transitionEffectDefault: linear;
-$transitionDefault: $transitionEffectDefault $transitionTimeDefault;
+$transitionDefault: $transitionEffectDefault $transitionTimeDefault ;
 
 #navbar-principal {
   height: 100%;
@@ -54,18 +54,18 @@ $transitionDefault: $transitionEffectDefault $transitionTimeDefault;
     }
   }
 
-  &:hover {
-    .menu {
-      .item-menu {
-        .texto-item-menu {
-          overflow: flex;
-          width: 12rem !important;
+  // &:hover {
+  //   .menu {
+  //     .item-menu {
+  //       .texto-item-menu {
+  //         overflow: flex;
+  //         width: 12rem !important;
 
-          p {
-            display: block;
-          }
-        }
-      }
-    }
-  }
+  //         p {
+  //           display: block;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
